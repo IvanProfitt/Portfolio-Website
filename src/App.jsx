@@ -2,31 +2,40 @@ import React from 'react';
 import NavBar from './NavBar';
 import { Box } from '@mui/material';
 import Landing from './Landing';
+import Projects from './Projects'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'Noto Serif, Public Sans, sans-serif',
+    h6: {
+      fontFamily: 'Noto Serif, serif',  // Ensure Noto Serif is used for h6
+    },
+    h5: {
+      fontFamily: 'Noto Serif, serif',  // Ensure Noto Serif is used for h5
+    },
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         html: {
           fontSize: '62.5%',
-          fontFamily: 'public-sans, sans-serif',
+          fontFamily: 'Noto Serif, Public Sans, sans-serif',
           color: 'black',
-          width:'100%'
+          width: '100%',
         },
         body: {
           margin: 0,
-          width:'100%',
+          width: '100%',
           boxSizing: 'border-box',
-          fontFamily: 'public-sans, sans-serif',
+          fontFamily: 'Noto Serif, Public Sans, sans-serif',
           backgroundColor: '#f5f4ed',
         },
       },
     },
   },
 });
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -41,13 +50,13 @@ function App() {
         <NavBar position="fixed" />
         <Box 
         sx={{
-        padding: '20px',
-        marginTop: {
-          md: '172px',
-          sm: '145px',
-      }}}>
-          <Landing />
+        padding: '20px',}}>
+          <Landing
+          sx={{
+            height:"100vh",
+          }} />
         </Box>
+        <Projects />
       </Box>
     </ThemeProvider>
   );

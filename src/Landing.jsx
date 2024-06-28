@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 function Landing() {
     return (
         <Box className="landingText" sx={{
+            height:'85vh',
             display: 'flex',
             flexDirection: 'row',
         }}>
@@ -12,8 +13,14 @@ function Landing() {
                 flexDirection: 'column',
                 margin: 'auto'
             }}>
-                <Typography variant="h1">Hi! I'm Ivan</Typography>
-                <Typography variant="h4">Full-Stack Developer, Philosophy Student</Typography>
+                <Typography className="badge bg-blue text-white"
+                 sx={{padding:5, 
+                      marginBottom:4,
+                      fontWeight:600}} variant="h1">Hi! I'm Ivan Profitt</Typography>
+                <Typography variant="h2" sx={{
+                    fontWeight:500
+
+                }}>Full-Stack Developer, Philosophy Student</Typography>
                 <Typography variant="subtitle1">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa aliquid consequatur quo asperiores.
                     Atque, veniam incidunt eius dolore soluta excepturi sit iste nulla modi voluptate blanditiis quam,
