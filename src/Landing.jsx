@@ -13,7 +13,7 @@ function Landing() {
                 flexDirection: 'column',
                 margin: 'auto'
             }}>
-                <Typography className="badge bg-blue text-white"
+                <Typography 
                  sx={{padding:5, 
                       marginBottom:4,
                       fontWeight:600}} variant="h1">Hi! I'm Ivan Profitt</Typography>

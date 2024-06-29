@@ -50,9 +50,10 @@ function App() {
         <NavBar position="fixed" />
         <Box 
         sx={{
-        padding: '20px',}}>
+        paddingTop: "min(10vh,280px)",}}>
           <Landing
           sx={{
+            paddingTop:"64px",
             height:"100vh",
           }} />
         </Box>

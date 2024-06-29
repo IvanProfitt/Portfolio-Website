@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
         </Box>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -71,64 +71,55 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{ display: { xs: 'block', md: 'none' }, marginLeft: '-12px' }} // Adjust margin for alignment
             >
               <MenuIcon />
             </IconButton>
           </Box>
-
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'left', flexGrow: 1 }}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                fontWeight: 600,
-                fontSize: { xs: 24, md: 30 },
-                letterSpacing: '.2rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                margin: 0,
-                padding: 0,
-                textAlign: 'center',
-              }}
-            >
-              Ivan Profitt
-            </Typography>
-          </Box>
-
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#app-bar-with-responsive-menu"
+            sx={{
+              fontWeight: 600,
+              letterSpacing: '.2rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              flexGrow: 1,
+              textAlign: 'center',
+            }}
+          >
+            Ivan Profitt
+          </Typography>
           <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                className="nb-button orange"
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', margin:2 }}
+                sx={{ my: 2, color: 'black', display: 'block', margin: 2 }}
               >
                 <Typography sx={{ fontSize: '1.5rem', textAlign: 'center' }}>{page}</Typography>
               </Button>
             ))}
           </Box>
-
           <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+            }}
+          >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
                 <Typography sx={{ fontSize: '1.5rem', textAlign: 'center', margin: 3, padding: 1, border: '1px solid black' }}>
