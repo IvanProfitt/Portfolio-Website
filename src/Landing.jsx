@@ -4,9 +4,9 @@ import { Box } from "@mui/material";
 function Landing() {
     return (
         <Box className="landingText" sx={{
+            flexDirection:{md:'row', sm:'column'},
             height:'85vh',
             display: 'flex',
-            flexDirection: 'row',
         }}>
             <Box sx={{
                 display: 'flex',
@@ -29,7 +29,7 @@ function Landing() {
             </Box>
 
             <Box className="landingDiv" sx={{
-                width: '50%',
+                width: {sm:'100%'},
                 marginLeft: 'auto', 
                 display: 'flex',
                 justifyContent: 'center',

@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Projects', 'About Me', 'Resume', 'Blog'];
 
+
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
@@ -24,6 +25,8 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -48,9 +51,9 @@ function ResponsiveAppBar() {
       left: 0,
       right: 0, 
       margin: "0 auto",
-      top: visible ? '0' : '-150px', // Adjust height of AppBar accordingly
+      top: visible ? '0' : '-150px',
       transition: 'top 0.6s',
-      zIndex: 1000, // Ensure AppBar is above other content
+      zIndex: 1000,
     }}>
       <Box className="marquee"
         sx={{
@@ -82,6 +85,7 @@ function ResponsiveAppBar() {
             href="#app-bar-with-responsive-menu"
             sx={{
               fontWeight: 600,
+              fontSize:30,
               letterSpacing: '.2rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -94,6 +98,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+                className="nb-button default"
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block', margin: 2 }}
@@ -122,7 +127,7 @@ function ResponsiveAppBar() {
           >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center', margin: 3, padding: 1, border: '1px solid black' }}>
+                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center', margin: 3, padding: 1 }}>
                   {page}
                 </Typography>
               </MenuItem>
