@@ -4,9 +4,11 @@ import { Box } from "@mui/material";
 function Landing() {
     return (
         <Box className="landingText" sx={{
-            flexDirection:{md:'row', sm:'column'},
+            flexDirection:{md:'row', sm:'column', xs:'column'},
             height:'85vh',
             display: 'flex',
+            alignItems:'center',
+            justifyContent:'center',
         }}>
             <Box sx={{
                 display: 'flex',

@@ -5,15 +5,17 @@ import Landing from './Landing';
 import Projects from './Projects'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import AboutMe from './AboutMe';
+import Skills from './Skills';
 
 const theme = createTheme({
   typography: {
     fontFamily: 'Noto Serif, Public Sans, sans-serif',
     h6: {
-      fontFamily: 'Noto Serif, serif',  // Ensure Noto Serif is used for h6
+      fontFamily: 'Noto Serif, serif',
     },
     h5: {
-      fontFamily: 'Noto Serif, serif',  // Ensure Noto Serif is used for h5
+      fontFamily: 'Noto Serif, serif', 
     },
   },
   components: {
@@ -58,6 +60,12 @@ function App() {
           }} />
         </Box>
         <Projects />
+        <AboutMe
+        sx={{
+          height:'50vh',
+          width:'90%',
+        }} />
+        <Skills />
       </Box>
     </ThemeProvider>
   );

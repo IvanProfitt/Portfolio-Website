@@ -1,6 +1,19 @@
 import { Box } from "@mui/material";
 import { Link } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import ProjectBox from "./ProjectBox";
+
+const projectInfo=[
+  {imgUrl: "./Sprout Logo transparent.png", link: "https://www.youtube.com",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum, saepe error ratione consequuntur ex blanditiis esse et itaque magni quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio similique",
+  },
+  {imgUrl: "./Sprout Logo transparent.png", link: "https://www.youtube.com",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum, saepe error ratione consequuntur ex blanditiis esse et itaque magni quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio similique",
+  },
+  {imgUrl: "./Sprout Logo transparent.png", link: "https://www.youtube.com",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum, saepe error ratione consequuntur ex blanditiis esse et itaque magni quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio similique",
+  }
+]
 
 function Projects() {
   return (
@@ -27,90 +40,18 @@ function Projects() {
           gap: 8, 
         }}
       >
-        <Box
-          className="card"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: 2,
-            justifyContent: "center",
-            border: 2, 
-          }}
-        >
-          <Box
-            component="img"
-            src="./Sprout Logo transparent.png"
-            sx={{
-              width: 150,
-            }}
-          />
-          <Link to="https://www.youtube.com" />
-          <Typography variant="h6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum,
-            saepe error ratione consequuntur ex blanditiis esse et itaque magni
-            quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio
-            similique.
-          </Typography>
-          <h1>LINK</h1>
-        </Box>
 
-        <Box
-          className="card"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: 2, 
-            justifyContent: "center",
-            border: 2, 
-          }}
-        >
-          <Box
-            component="img"
-            src="./Sprout Logo transparent.png"
-            sx={{
-              width: 150,
-            }}
-          />
-          <Link to="https://www.youtube.com" />
-          <Typography variant="h6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum,
-            saepe error ratione consequuntur ex blanditiis esse et itaque magni
-            quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio
-            similique.
-          </Typography>
-          <h1>LINK</h1>
-        </Box>
+        {projectInfo.map((projectInfo) => (
+            <ProjectBox project={projectInfo} />
+          ))}
 
-        <Box
-          className="card"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: 2,
-            justifyContent: "center",
-            border: 2, 
-          }}
-        >
-          <Box
-            component="img"
-            src="./Sprout Logo transparent.png"
-            sx={{
-              width: 150,
-            }}
-          />
-          <Link to="https://www.youtube.com" />
-          <Typography variant="h6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum,
-            saepe error ratione consequuntur ex blanditiis esse et itaque magni
-            quisquam ipsa eius quo praesentium nemo. Odio reiciendis distinctio
-            similique.
-          </Typography>
-          <h1>LINK</h1>
-        </Box>
+
       </Box>
+      <Link className="nb-button blue"
+      sx={{
+        marginTop:8,
+        marginBottom:0,
+      }}>View More</Link>
     </Box>
   );
 }

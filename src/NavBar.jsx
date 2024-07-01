@@ -9,9 +9,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
-const pages = ['Projects', 'About Me', 'Resume', 'Blog'];
-
+const pages = [
+  { name: 'Projects', link: '/projects' },
+  { name: 'About Me', link: '/about' },
+  { name: 'Resume', link: '/resume' },
+  { name: 'Blog', link: '/blog' }
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -55,15 +60,6 @@ function ResponsiveAppBar() {
       transition: 'top 0.6s',
       zIndex: 1000,
     }}>
-      <Box className="marquee"
-        sx={{
-          backgroundColor:"black",
-          color:"white"
-        }}>
-          <Box className="marquee-content">
-            <Typography variant="subheading1">TEST</Typography>
-          </Box>
-        </Box>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
@@ -95,16 +91,18 @@ function ResponsiveAppBar() {
           >
             Ivan Profitt
           </Typography>
-          <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' },  }}>
             {pages.map((page) => (
+              <Link to={page.link}>
               <Button
                 className="nb-button default"
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block', margin: 2 }}
               >
-                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center' }}>{page}</Typography>
+                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center' }}>{page.name}</Typography>
               </Button>
+              </Link>
             ))}
           </Box>
           <Menu
@@ -123,13 +121,29 @@ function ResponsiveAppBar() {
             onClose={handleCloseNavMenu}
             sx={{
               display: { xs: 'block', md: 'none' },
+              width: '100%',
+              left: 0,
+              right: 0,
+              '& .MuiPaper-root': {
+                width: '100%',
+                maxWidth: '100%',
+                left: 0,
+                right: 0,
+              },
             }}
           >
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center', margin: 3, padding: 1 }}>
-                  {page}
-                </Typography>
+              <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                <Link to={page.link} sx={{}}>
+              <Button
+                className="nb-button default"
+                key={page.name}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'black', display: 'block', margin: 2, }}
+              >
+                <Typography sx={{ fontSize: '1.5rem', textAlign: 'center'}}>{page.name}</Typography>
+              </Button>
+              </Link>
               </MenuItem>
             ))}
           </Menu>
