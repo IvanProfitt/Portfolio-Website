@@ -1,4 +1,9 @@
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
+import PropTypes from 'prop-types';
+
+PostBox.propTypes = {
+  post: PropTypes.object.isRequired
+}
 
 function PostBox({ post }) {
   return (

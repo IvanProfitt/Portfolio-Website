@@ -54,8 +54,8 @@ function Landing() {
 
                 }}
                 style={{
-                    webkitBoxShadow: "10px 10px 0px -3px rgba(0,0,0,0.75)",
-                    mozBoxShadow: "10px 10px 0px -3px rgba(0,0,0,0.75)",
+                    WebkitBoxShadow: "10px 10px 0px -3px rgba(0,0,0,0.75)",
+                    MozBoxShadow: "10px 10px 0px -3px rgba(0,0,0,0.75)",
                     boxShadow: "10px 10px 0px -3px rgba(0,0,0,0.75)"
                 }}
                 

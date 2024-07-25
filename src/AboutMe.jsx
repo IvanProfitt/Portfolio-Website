@@ -32,7 +32,6 @@ function AboutMe(){
                 </Typography>
                 <Typography variant="h2">Media</Typography>
                 <Typography variant="h3">Favorite Movies</Typography>
-                <Typography variant="body1">Check me out on </Typography> <a href="http://https://letterboxd.com/IvanProfitt">Letterboxd</a><Typography variant="body1">. Here are my current top 4:</Typography>
             </Box>
         </>
 

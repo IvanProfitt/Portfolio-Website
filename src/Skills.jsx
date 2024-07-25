@@ -1,5 +1,6 @@
 import { Grid, Typography, Box } from '@mui/material';
-import skills from './skills';
+import skills from './skills.js';
+import React from 'react';
 
 
 const Skills = () => {

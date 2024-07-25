@@ -1,4 +1,3 @@
-import React from 'react';
 import { getAllPosts } from '../blog/getPosts';
 import Posts from '../components/Posts';
 

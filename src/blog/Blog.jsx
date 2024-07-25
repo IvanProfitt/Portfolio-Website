@@ -37,7 +37,7 @@ function Blog() {
               <Typography variant="h1" component="h1" sx={{ color: 'black' }}>Categories</Typography>
               {categories.map((category) => (
                 <div key={category.id}>
-                  <Link href={`/blog/${category.id}`}>
+                  <Link to={`/blog/${category.id}`}>
                     <Typography variant="body1" sx={{ color: 'blue', textDecoration: 'none' }}>
                       {category.name}
                     </Typography>

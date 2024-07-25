@@ -1,4 +1,18 @@
-import { Box, Link, Typography } from "@mui/material";
+import React from "react";
+import { Box, Typography, Link as MuiLink } from "@mui/material";
+import { Link as RouterLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+
+// PropTypes validation
+ProjectBox.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 function ProjectBox({ project }) {
   return (
@@ -32,7 +46,6 @@ function ProjectBox({ project }) {
           width: 150,
         }}
       />
-      <Link to={project.link} />
       <Typography variant="h6">
         {project.desc}
       </Typography>
@@ -41,7 +54,6 @@ function ProjectBox({ project }) {
           margin: 3,
         }}
       >
-        <Link className="nb-button default">Learn More</Link>
       </Box>
     </Box>
   );

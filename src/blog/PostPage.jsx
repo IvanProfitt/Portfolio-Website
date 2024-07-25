@@ -11,9 +11,6 @@ function PostPage() {
   useEffect(() => {
     const loadPost = () => {
       const post = getPost(slug);
-      console.log("Slug from URL:", slug); // Debugging line
-      console.log("Post Path:", `./posts/${slug}.mdx`); // Debugging line
-      console.log("Post Object:", post); // Debugging line
 
       if (post) {
         setMeta(post.meta);

@@ -1,4 +1,5 @@
-import { Typography, Box, } from '@mui/material';
+import { Typography, Box, Link } from '@mui/material';
+import React from 'react';
 
 
 
@@ -20,23 +21,23 @@ function Footer(){
 
         }}>
 
-            <a href="https://www.github.com/ivanprofitt" target="_blank" rel="noopener noreferrer">
+            <Link to="https://www.github.com/ivanprofitt" target="_blank" rel="noopener noreferrer">
                 <Box sx={{
                     height: '50px',
                     width: '50px'
                 }}>
                     <img src="./logos/github-original.svg" alt="GitHub" style={{ height: '100%', width: '100%' }} />
                 </Box>
-            </a>
+            </Link>
 
-            <a href="https://www.linkedin.com/in/ivanprofitt/" target="_blank" rel="noopener noreferrer">
+            <Link to="https://www.linkedin.com/in/ivanprofitt/" target="_blank" rel="noopener noreferrer">
                 <Box sx={{
                     height: '50px',
                     width: '50px'
                 }}>
                     <img src="./logos/linkedin-plain.svg" alt="GitHub" style={{ height: '100%', width: '100%' }} />
                 </Box>
-            </a>
+            </Link>
         </Box>
         <Box sx={{
             justifyContent:'right',

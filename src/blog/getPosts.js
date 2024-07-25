@@ -1,20 +1,21 @@
-// src/blog/getPosts.js
 const posts = import.meta.glob('./posts/*.mdx', { eager: true });
 
+console.log(posts);  // Add this line to check the structure of imported modules
 
 export function getAllPosts() {
+  return Object.entries(posts).map(([path, module]) => {
+    const slug = path.split('/').pop().replace('.mdx', '');
+    console.log(module);  // Add this line to check the module's structure
+    return {
+      slug,
+      meta: module.meta,
+    };
+  });
+}
 
-    return Object.entries(posts).map(([path, module]) => {
-      const slug = path.split('/').pop().replace('.mdx', '');
-      return {
-        slug,
-        meta: module.meta,
-      };
-    });
-  }
-  
-  export function getPost(slug) {
-    const postPath = `./posts/${slug}.mdx`;
-    const post = posts[postPath];
-    return post;
-  }
+export function getPost(slug) {
+  const postPath = `./posts/${slug}.mdx`;
+  const post = posts[postPath];
+  console.log(post);  // Add this line to check the structure of the post
+  return post;
+}
