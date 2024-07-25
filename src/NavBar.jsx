@@ -11,10 +11,11 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
+
 const pages = [
   { name: 'Projects', link: '/projects' },
   { name: 'About Me', link: '/about' },
-  { name: 'Resume', link: '/resume' },
+  { name: 'Resume', link: "https://docs.google.com/document/d/1e4jrIq5O_GRk81gMx6GdrALcZnSUSQYvBOTS4idGnJ4"},
   { name: 'Blog', link: '/blog' }
 ];
 
@@ -48,6 +49,9 @@ function ResponsiveAppBar() {
   }, [prevScrollPos]);
 
   return (
+    <Box
+    sx={{
+      paddingBottom: {md:"64px",sm:"48px"}}}>
     <AppBar position="fixed" sx={{
       borderBottom: "1px solid black",
       backgroundColor: "white",
@@ -74,11 +78,10 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
           </Box>
+          <Link to="/">
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               fontWeight: 600,
               fontSize:30,
@@ -91,9 +94,10 @@ function ResponsiveAppBar() {
           >
             Ivan Profitt
           </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' },  }}>
             {pages.map((page) => (
-              <Link to={page.link}>
+              <Link to={page.link} key={page.name}>
               <Button
                 className="nb-button default"
                 key={page.name}
@@ -150,6 +154,7 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    </Box>
   );
 }
 

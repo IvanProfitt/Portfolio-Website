@@ -1,5 +1,6 @@
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Landing() {
     return (
@@ -16,18 +17,23 @@ function Landing() {
                 margin: 'auto'
             }}>
                 <Typography 
-                 sx={{padding:5, 
-                      marginBottom:4,
-                      fontWeight:600}} variant="h1">Hi! I'm Ivan Profitt</Typography>
+                 sx={{
+                      marginBottom:0,
+                      fontWeight:600}} variant="h1">Hi! I&apos;m Ivan Profitt</Typography>
                 <Typography variant="h2" sx={{
-                    fontWeight:500
+                    fontWeight:400
 
                 }}>Full-Stack Developer, Philosophy Student</Typography>
-                <Typography variant="subtitle1">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa aliquid consequatur quo asperiores.
-                    Atque, veniam incidunt eius dolore soluta excepturi sit iste nulla modi voluptate blanditiis quam,
-                    eum aut minus.
-                </Typography>
+                <Box
+                sx={{
+                    display:"flex",
+                    marginTop:5,
+                }}>
+                    <Link
+                    style ={{ marginRight:20}} to="https://docs.google.com/document/d/1e4jrIq5O_GRk81gMx6GdrALcZnSUSQYvBOTS4idGnJ4" target="_blank" className="nb-button default">My Resume</Link>
+                    <Link style={{ marginLeft:20}}to="/Projects" className="nb-button default">Projects</Link>
+                </Box>
+
             </Box>
 
             <Box className="landingDiv" sx={{
