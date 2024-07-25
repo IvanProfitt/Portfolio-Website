@@ -1,9 +1,10 @@
 import NavBar from './NavBar';
 import { Box } from '@mui/material';
 import Landing from './Landing';
-import Projects from './Projects'
-import AboutMe from './AboutMe';
+import Projects from './projects/Projects'
+import AboutMeSection from './AboutMeSection';
 import Skills from './Skills';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -22,13 +23,13 @@ function App() {
             height:"100vh",
           }} />
         <Projects />
-        <AboutMe
+        <AboutMeSection
         sx={{
           height:'50vh',
           width:'90%',
         }} />
         <Skills />
-
+        <Footer />
 
       </Box>
       </Box>

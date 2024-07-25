@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import ProjectBox from "./ProjectBox";
-import projectInfo from "../public/projectInfo";
+import projectInfo from "./projectInfo";
 
 
 function Projects() {

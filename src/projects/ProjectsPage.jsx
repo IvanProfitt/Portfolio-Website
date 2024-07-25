@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
-import NavBar from './NavBar';
+import NavBar from '../NavBar';
 import { Box, Grid } from "@mui/material";
-import ProjectBox from './ProjectBox';
-import projectInfo from "../public/projectInfo";
+import ProjectBox from "./ProjectBox";
+import projectInfo from "./projectInfo";
 import Link from "@mui/material/Link";
 
 function ProjectsPage(){

@@ -3,12 +3,12 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Resume from "./Resume";
-import ProjectsPage from "./ProjectsPage";
+import ProjectsPage from "./projects/ProjectsPage";
 import Blog from "./blog/Blog";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import PostPage from "./blog/PostPage";
-import AboutMe from "./AboutMe";
+import AboutMe from "./AboutMeSection";
 
 const theme = createTheme({
     typography: {
