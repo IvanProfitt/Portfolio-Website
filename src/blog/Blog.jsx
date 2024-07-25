@@ -14,7 +14,6 @@ function Blog() {
   useEffect(() => {
     const fetchPosts = async () => {
       const allPosts = getAllPosts();
-      console.log("Fetched posts:", allPosts); // Debugging line
       setPosts(allPosts);
     };
 
@@ -25,7 +24,7 @@ function Blog() {
     <>
       <NavBar />
       <Typography variant="h1" component="h1" sx={{ color: 'black', textAlign: 'center', paddingTop: '3vh' }}>
-        Welcome to my blog!
+        Ivan&apos;s Blog
       </Typography>
       <Box sx={{ margin: 'auto', paddingTop: '3vh', width: "80%" }}>
         <Grid container spacing={3}>

@@ -1,7 +1,6 @@
-// src/components/Posts.jsx
-import React from 'react';
-import { Typography } from '@mui/material';
-import { Link } from 'react-router-dom'; // Import Link for routing
+
+import { Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom'; 
 
 const Posts = ({ posts }) => {
   return (
@@ -11,9 +10,24 @@ const Posts = ({ posts }) => {
       <ul>
         {posts.length > 0 ? (
           posts.map((post) => (
-            <li key={post.slug}>
-              <Link to={`/blog/${post.slug}`}>{post.meta.title}</Link>
-            </li>
+            <Link to={`/blog/post/${post.slug}`} key={post.slug}>
+            <Box className="card" sx={{
+              display: "flex",
+              width:"80%",
+              flexDirection: "column",
+              border: "2px solid black",
+              borderRadius: "10px",
+              padding: "10px",
+              margin: "10px",
+            }}>
+            <Typography variant="h2">
+              {post.meta.title}
+            </Typography>
+            <Typography variant="subtitle1" sx={{
+              fontSize: "1.5rem",
+            }}>{post.meta.description}</Typography>
+            </Box>
+            </Link>
           ))
         ) : (
           <Typography variant="body1">No posts available</Typography>

@@ -8,6 +8,7 @@ import Blog from "./blog/Blog";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import PostPage from "./blog/PostPage";
+import AboutMe from "./AboutMe";
 
 const theme = createTheme({
     typography: {
@@ -62,8 +63,12 @@ const router = createBrowserRouter ([
     element:<Blog />,
     },
     {
-    path: "/blog/:slug",
-    element: <PostPage />, // This should be the component to render individual posts
+    path: "/blog/post/:slug",
+    element: <PostPage />, 
+    },
+    {
+    path:"/about",
+    element:<AboutMe />,
     },
 
 ]);
