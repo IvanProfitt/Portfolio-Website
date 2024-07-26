@@ -1,11 +1,11 @@
 const categories = [
     {
-      id: "programming", // Add an ID for each category
+      id: "programming",
       name: "Programming",
       description: "My programming projects and updates.",
     },
     {
-      id: "philosophy", // Add an ID for each category
+      id: "philosophy",
       name: "Philosophy",
       description: "Writings about philosophy.",
     },

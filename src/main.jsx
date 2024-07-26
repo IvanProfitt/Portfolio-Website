@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import PostPage from "./blog/PostPage";
 import AboutMe from "./AboutMeSection";
+import Category from "./blog/Category";
 
 const theme = createTheme({
     typography: {
@@ -65,6 +66,10 @@ const router = createHashRouter ([
     {
     path: "/blog/post/:slug",
     element: <PostPage />, 
+    },
+    {
+    path: "/blog/category/:categoryId",
+    element: <Category />, 
     },
     {
     path:"/about",

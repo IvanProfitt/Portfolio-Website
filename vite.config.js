@@ -5,10 +5,9 @@ import {defineConfig} from 'vite'
 // …
 const viteConfig = defineConfig({
   plugins: [
-    {enforce: 'pre', ...mdx({/* jsxImportSource: …, otherOptions… */})},
+    {enforce: 'pre', ...mdx({})},
     react({include: /\.(jsx|js|mdx|md|tsx|ts)$/})
   ]
 })
 // …
-
 export default viteConfig
