@@ -1,6 +1,6 @@
-
-import { Typography, Box } from '@mui/material';
-import { Link } from 'react-router-dom'; 
+import { Typography } from '@mui/material';
+import PropTypes from 'prop-types';
+import PostBox from './PostBox';
 
 const Posts = ({ posts }) => {
   return (
@@ -10,24 +10,7 @@ const Posts = ({ posts }) => {
       <ul>
         {posts.length > 0 ? (
           posts.map((post) => (
-            <Link to={`/blog/post/${post.slug}`} key={post.slug}>
-            <Box className="card" sx={{
-              display: "flex",
-              width:"80%",
-              flexDirection: "column",
-              border: "2px solid black",
-              borderRadius: "10px",
-              padding: "10px",
-              margin: "10px",
-            }}>
-            <Typography variant="h2">
-              {post.meta.title}
-            </Typography>
-            <Typography variant="subtitle1" sx={{
-              fontSize: "1.5rem",
-            }}>{post.meta.description}</Typography>
-            </Box>
-            </Link>
+            <PostBox post={post} key={post._id} />
           ))
         ) : (
           <Typography variant="body1">No posts available</Typography>
@@ -35,6 +18,10 @@ const Posts = ({ posts }) => {
       </ul>
     </>
   );
+};
+
+Posts.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Posts;

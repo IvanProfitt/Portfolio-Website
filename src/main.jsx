@@ -8,7 +8,7 @@ import Blog from "./blog/Blog";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import PostPage from "./blog/PostPage";
-import AboutMe from "./AboutMeSection";
+import AboutMe from "./AboutMe";
 import Category from "./blog/Category";
 
 const theme = createTheme({
