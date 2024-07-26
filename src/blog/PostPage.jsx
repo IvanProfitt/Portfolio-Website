@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { getPost } from './getPosts';
@@ -24,13 +24,18 @@ function PostPage() {
   }, [slug]);
 
   if (!PostContent) {
-    return <Typography variant="body1">Loading...</Typography>;
+    return <Typography variant="body1">Post not found!</Typography>;
   }
 
   return (
     <>
-      {meta && <Typography variant="h1">{meta.title}</Typography>}
-      <PostContent /> {/* Render the MDX content */}
+      {meta && <Typography variant="h1" sx={{
+        margin:'0 auto',
+        padding:3,
+        width:'100%',
+        textAlign:'center',
+      }}>{meta.title}</Typography>}
+      <PostContent />
     </>
   );
 }

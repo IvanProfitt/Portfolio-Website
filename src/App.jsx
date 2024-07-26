@@ -5,7 +5,6 @@ import Projects from './projects/Projects'
 import AboutMeSection from './AboutMeSection';
 import Skills from './Skills.jsx';
 import Footer from './Footer';
-import React from 'react';
 
 
 function App() {
