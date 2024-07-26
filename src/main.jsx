@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Resume from "./Resume";
 import ProjectsPage from "./projects/ProjectsPage";
@@ -45,20 +45,39 @@ const theme = createTheme({
     },
   });
 
+const router = createHashRouter ([
+    {
+    path:"/",
+    element: <App />,
+    },
+    {
+    path:"/resume",
+    element:<Resume />,
+    },
+    {
+    path:"/projects",
+    element:<ProjectsPage />,
+    },
+    {
+    path:"/blog",
+    element:<Blog />,
+    },
+    {
+    path: "/blog/post/:slug",
+    element: <PostPage />, 
+    },
+    {
+    path:"/about",
+    element:<AboutMe />,
+    },
+
+]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
         <CssBaseline />
-            <HashRouter>
-                <Routes>
-                    <Route path="/" element={<App />} />
-                    <Route path="/resume" element={<Resume />} />
-                    <Route path="/projects" element={<ProjectsPage />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/blog/post/:slug" element={<PostPage />} />
-                    <Route path="/about" element={<AboutMe />} />
-                </Routes>
-            </HashRouter>
+            <RouterProvider router={router} />
         </ThemeProvider>
     </React.StrictMode>
 );
