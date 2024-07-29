@@ -30,13 +30,13 @@ const Skills = () => {
             }}>
               {skillCategory.category}
             </Typography>
-            <Grid container spacing={3} justifyContent="center" sx={{
+            <Grid container spacing={1} justifyContent="center" sx={{
             }}>
               {skillCategory.items.map((skill) => (
                 <Grid item  key={skill.name}>
                   <Box display="flex" flexDirection="column" alignItems="center" className="badge" sx={{
-                    padding:3,
-                    margin:2,
+                    padding:2,
+                    margin:1,
                   }}>
                     <img
                       src={`/logos/${skill.logo}`}

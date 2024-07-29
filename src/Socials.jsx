@@ -21,6 +21,16 @@ function Socials({ size = 50 }) {
                     <img src="./logos/linkedin-plain.svg" alt="LinkedIn" style={{ height: '100%', width: '100%' }} />
                 </Box>
             </Link>
+
+            
+            <Link to="https://letterboxd.com/IvanProfitt/" target="_blank" rel="noopener noreferrer">
+                <Box sx={{
+                    height: `${size}px`,
+                    width: `${size}px`
+                }}>
+                    <img src="./logos/letterboxd.png" alt="letterboxd" style={{ height: '100%', width: '100%' }} />
+                </Box>
+            </Link>
         </Box>
     );
 }

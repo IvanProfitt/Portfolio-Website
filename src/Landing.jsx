@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 function Landing() {
     return (
         <Box className="landingText" sx={{
+            paddingTop:{ xs:20},
             flexDirection:{md:'row', sm:'column', xs:'column'},
             height:'85vh',
             display: 'flex',
             alignItems:'center',
             justifyContent:'center',
+            marginBottom:{xs:20, md:0},
         }}>
             <Box sx={{
                 display: 'flex',
@@ -28,6 +30,7 @@ function Landing() {
                 sx={{
                     display:"flex",
                     marginTop:5,
+                    marginBottom:{xs:5, md:0},
                 }}>
                     <Link
                     style ={{ marginRight:20}} to="https://docs.google.com/document/d/1e4jrIq5O_GRk81gMx6GdrALcZnSUSQYvBOTS4idGnJ4" target="_blank" className="nb-button default">My Resume</Link>

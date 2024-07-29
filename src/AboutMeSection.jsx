@@ -20,7 +20,7 @@ function AboutMeSection(){
                 <Typography variant="body1" 
                 sx={{
                 fontSize:"2em",
-                width:'50%',
+                width:{md:'50%'},
                 padding:2,
                 }}>
                 A full stack web developer, continuing to learn new technologies. Professional freelancing experience with many satisfied clients. Enjoyer of game development and machine learning.

@@ -22,6 +22,9 @@ function PostBox({ post }) {
         }}>
           {post.meta.description}
         </Typography>
+        <Typography variant="subtitle1" sx={{}}>
+          Published: {post.meta.published}
+        </Typography>
       </Box>
     </Link>
   );
@@ -33,6 +36,7 @@ PostBox.propTypes = {
     meta: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
+      published: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };

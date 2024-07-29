@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import categories from './settings/categories';
 import { getAllPosts } from './getPosts';
+import PostBox from './PostBox';
 
 const Category = () => {
   const { categoryId } = useParams();
@@ -21,10 +22,7 @@ const Category = () => {
       {categoryPosts.length > 0 ? (
         <ul>
           {categoryPosts.map(post => (
-            <li key={post.slug}>
-              <a href={`/posts/${post.slug}`}>{post.meta.title}</a>
-              <p>{post.meta.description}</p>
-            </li>
+            <PostBox key={post.slug} post = {post}></PostBox>
           ))}
         </ul>
       ) : (

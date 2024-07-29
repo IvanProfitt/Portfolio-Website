@@ -4,6 +4,7 @@ import { Typography, Box } from '@mui/material';
 import { getPost } from './getPosts';
 import BlogRight from './BlogRight';
 import NavBar from '../NavBar.jsx';
+import BlogNav from './BlogNav.jsx';
 
 
 
@@ -38,7 +39,7 @@ function PostPage() {
 
   return (
     <>
-    <NavBar />
+    <BlogNav />
 
         <Typography variant="h1" sx={{ margin: '0 auto', padding: 3, width: '100%', textAlign: 'center' }}>
           {meta.title}
@@ -46,10 +47,10 @@ function PostPage() {
 
         <Box sx={{
           display:'flex',
-          flexDirection:'row',
+          flexDirection:{lg:'row', md:'column'},
         }}>
         <Box sx={{
-        width: '70%',
+        width: {md:'70%', xs:'95%'},
       }}>
         <PostContent components={{
           h1: (props) => <Typography variant="h1" {...props} sx={{ padding: 1, width: '100%', textAlign: 'center', fontWeight:700}} />,
