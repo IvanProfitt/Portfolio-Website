@@ -1,6 +1,5 @@
 const posts = import.meta.glob('./posts/*.mdx', { eager: true });
 
-
 export function getAllPosts() {
   return Object.entries(posts).map(([path, module]) => {
     const slug = path.split('/').pop().replace('.mdx', '');
@@ -14,5 +13,10 @@ export function getAllPosts() {
 export function getPost(slug) {
   const postPath = `./posts/${slug}.mdx`;
   const post = posts[postPath];
+  
+  if (!post) {
+    throw new Error(`Post not found: ${slug}`);
+  }
+  
   return post;
 }

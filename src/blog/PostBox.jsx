@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 function PostBox({ post }) {
+  const date = new Date(post.meta.published);
+  const formattedDate = !isNaN(date)
+    ? date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    : "Invalid Date";
+
   return (
     <Link to={`/blog/post/${post.slug}`}>
       <Box className="card" sx={{
@@ -22,8 +31,8 @@ function PostBox({ post }) {
         }}>
           {post.meta.description}
         </Typography>
-        <Typography variant="subtitle1" sx={{}}>
-          Published: {post.meta.published}
+        <Typography variant="subtitle1">
+          Published: {formattedDate}
         </Typography>
       </Box>
     </Link>
@@ -36,7 +45,7 @@ PostBox.propTypes = {
     meta: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      published: PropTypes.string.isRequired,
+      published: PropTypes.string.isRequired, 
     }).isRequired,
   }).isRequired,
 };
