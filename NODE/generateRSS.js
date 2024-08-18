@@ -59,7 +59,7 @@ function generateRSS() {
 
   const rss = feed.xml({ indent: true });
 
-  fs.writeFileSync(path.join('public', 'rss.xml'), rss);
+  fs.writeFileSync('../public/rss.xml', rss);
 }
 
 generateRSS();
